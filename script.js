@@ -1,6 +1,7 @@
 const lettersPlace = document.getElementById("letters");
 const wordPlace = document.getElementById("hiddenWord");
 const words = ["PROGRAMARE", "WELLCODE", "ROMANIA", "IASI"];
+const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const outputMessage = document.querySelector(".message");
 let wordLength;
 let selectedWord;
@@ -26,18 +27,15 @@ function wordSelection() {
 createLetters();
 function createLetters() {
     let nrOfLetters = 26;
-    let nrAscii = 65;
     for (let i = 1; i <= nrOfLetters; ++i) {
-        let text = String.fromCharCode(nrAscii);
         const newBtn = document.createElement("button");
         newBtn.className = "btn btn-info";
         newBtn.style = "margin-right: 10px";
         newBtn.id = i;
-        newBtn.textContent = text;
+        newBtn.textContent = alphabet[i - 1];
         newBtn.addEventListener("click", pressedLetter);
         newBtn.addEventListener("click", resultOfGame);
         lettersPlace.appendChild(newBtn);
-        ++nrAscii;
     }
 }
 
