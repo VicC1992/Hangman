@@ -22,10 +22,10 @@ function wordSelection() {
         }
     }   
 }
-
+let firstLetter = "A";
 createLetters();
 function createLetters() {
-    let indexAsciiOfA = 65;
+    let indexAsciiOfA = firstLetter.charCodeAt(0);
     let nrOfLetters = 26;
     for (let i = 0; i < nrOfLetters; ++i) {
         const newBtn = document.createElement("button");
